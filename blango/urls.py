@@ -28,6 +28,7 @@ print(f"Time zone: {settings.TIME_ZONE}")
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("allauth.urls")),
     path(
     "accounts/register/",
     RegistrationView.as_view(form_class=BlangoRegistrationForm),
