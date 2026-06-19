@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Post</h2>
+<form method="post" action="">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="id_title" class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" id="id_title" value="{{ post.title }}">
+    </div>
+    <div class="mb-3">
+        <label for="id_content" class="form-label">Content</label>
+        <textarea name="content" class="form-control" id="id_content" rows="10">{{ post.content }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+{% endblock %}

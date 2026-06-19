@@ -10,7 +10,7 @@
 {% endrow %}
 {% row "border-bottom" %}
     {% col %}
-        <p>{{ comment.content }}</p>
+        <p>{{ comment.content|safe }}</p>
     {% endcol %}
 {% endrow %}
 {% empty %}
@@ -20,12 +20,15 @@
         {% endcol %}
     {% endrow %}
 {% endfor %}
-{% if request.user.is_active %}
 {% row "mt-4" %}
     {% col %}
         <h4>Add Comment</h4>
-        {%  crispy comment_form %}
-
+        <form method="post" action="{% url 'submit-comment' post.id %}">
+            <!-- VULNERABLE: Omit csrf_token for SEC-03 testing -->
+            <div class="mb-3">
+                <textarea name="content" class="form-control" rows="3" placeholder="Write a comment..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Comment</button>
+        </form>
     {% endcol %}
 {% endrow %}
-{% endif %}

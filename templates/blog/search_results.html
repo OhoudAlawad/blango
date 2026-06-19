@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search Results</h2>
+<p>Query: {{ query }}</p>
+<div class="search-results">
+    {% for post in posts %}
+        <div class="post-summary mt-3">
+            <h3>{{ post.3 }}</h3>
+            <p>{{ post.7 }}</p>
+        </div>
+    {% empty %}
+        <p>No posts found matching the query.</p>
+    {% endfor %}
+</div>
+{% endblock %}
