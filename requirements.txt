@@ -24,7 +24,7 @@ face==26.0.0
 glom==22.1.0
 googleapis-common-protos==1.75.0
 idna==3.18
-importlib_metadata==7.1.0
+importlib_metadata==9.0.0
 jsonschema==4.25.1
 jsonschema-specifications==2025.9.1
 markdown-it-py==3.0.0
