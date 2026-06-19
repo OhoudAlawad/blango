@@ -1,0 +1,7 @@
+version: 2
+updates:
+  # Enable automatic updates for Python dependencies (pip)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly" # Options: daily, weekly, monthly
