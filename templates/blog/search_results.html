@@ -5,8 +5,8 @@
 <div class="search-results">
     {% for post in posts %}
         <div class="post-summary mt-3">
-            <h3>{{ post.3 }}</h3>
-            <p>{{ post.7 }}</p>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
         </div>
     {% empty %}
         <p>No posts found matching the query.</p>
